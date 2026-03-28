@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adigun Olamide - MideShine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #1a1a1a;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            max-width: 800px;
+            width: 100%;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .nickname {
+            font-size: 18px;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            font-size: 24px;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .about {
+            margin-bottom: 40px;
+        }
+
+        .bio-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            margin-bottom: 40px;
+        }
+
+        .contact-links {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .contact-links li {
+            margin: 8px 0;
+        }
+
+        .contact-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 26px;
+            margin-top: 10px;
+            background: #00d4ff;
+            color: #1a1a1a;
+            font-weight: 700;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .highlight {
+            color: #00d4ff;
+            font-weight: 700;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 25px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .title {
+                font-size: 18px;
+            }
+
+            .header {
+                padding: 40px 30px;
+            }
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <img src="ms DP.jpg" alt="Profile" class="profile-pic">
+                <p class="nickname">Well known as</p>
+                <h1>MideShine</h1>
+                <p class="title">Graphic Designer | Videographer | Content Creator</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <section class="about">
+                <h2>About Me</h2>
+                <p class="bio-text">
+                    Hello! I'm <span class="highlight">Adigun Olamide Precious</span>, known professionally as <span class="highlight">MideShine</span>. 
+                    I am a videographer, graphic designer, and content creator with a passion for bringing ideas to life through visual storytelling. 
+                    My work combines creativity, technical expertise, and attention to detail to create compelling content that resonates with audiences.
+                </p>
+            </section>
+
+            <section class="skills">
+                <h2>My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">CSS</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">Graphic Design</div>
+                    <div class="skill-item">Videography</div>
+                    <div class="skill-item">Content Creation</div>
+                </div>
+            </section>
+
+            
+        </div>
+
+        <div class="cta-section">
+            <p class="cta-text">
+               Making Brands Shine <span class="highlight">amazing</span> together! 🎨✨🧑‍🎨
+            </p>
+            <a href="contact.html" class="cta-button" target="_blank" rel="noopener noreferrer">Contact Me</a>
+        </div>
+    </div>
+</body>
+</html>
